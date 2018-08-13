@@ -1,24 +1,28 @@
-- name: "Installing additional packages"
-  apt: pkg={{ item }} state=installed
-  with_items:
-  - virtualbox-guest-dkms 
-  - virtualbox-guest-utils 
-  - virtualbox-guest-x11
-  - mysql-server
-  - net-tools
-  - apache2
-  - software-properties-common
-  - php7.1 
-  - libapache2-mod-php7.1 
-  - php7.1-mcrypt 
-  - php7.1-cli 
-  - php7.1-xml 
-  - php7.1-zip 
-  - php7.1-mysql 
-  - php7.1-gd 
-  - php7.1-imagick 
-  - php7.1-recode 
-  - php7.1-tidy 
-  - php7.1-xmlrpc
-  - python3.6
-  - git
+- name: configure the ansible host 
+  hosts: 127.0.0.1
+  connection: local
+  tasks: 
+  - name: "Installing additional packages"
+    apt: pkg={{ item }} state=installed
+    with_items:
+    - virtualbox-guest-dkms 
+    - virtualbox-guest-utils 
+    - virtualbox-guest-x11
+    - mysql-server
+    - net-tools
+    - apache2
+    - software-properties-common
+    - php7.1 
+    - libapache2-mod-php7.1 
+    - php7.1-mcrypt 
+    - php7.1-cli 
+    - php7.1-xml 
+    - php7.1-zip 
+    - php7.1-mysql 
+    - php7.1-gd 
+    - php7.1-imagick 
+    - php7.1-recode 
+    - php7.1-tidy 
+    - php7.1-xmlrpc
+    - python3.6
+    - git
